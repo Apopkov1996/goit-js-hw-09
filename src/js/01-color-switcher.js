@@ -6,21 +6,21 @@ btnStopEl.addEventListener('click', oBtnStopClick);
 
 let intervalId = null;
 
+btnStopEl.setAttribute('disabled', true);
+
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, 0)}`;
 }
 
-function onBtnStartClik(e) {
-
-    e.currentTarget.setAttribute('disabled', true)
+function onBtnStartClik() {
+    btnStartEl.setAttribute('disabled', true)
     btnStopEl.removeAttribute('disabled')
-
-     intervalId = setInterval(() => { document.body.style.backgroundColor = getRandomHexColor(); }, 1000);
+    intervalId = setInterval(() => { document.body.style.backgroundColor = getRandomHexColor(); }, 1000);
 };
 
 
-function oBtnStopClick(e) {
-    e.currentTarget.setAttribute('disabled', true)
+function oBtnStopClick() {
+    btnStopEl.setAttribute('disabled', true)
     btnStartEl.removeAttribute('disabled')
     clearInterval(intervalId)
 
