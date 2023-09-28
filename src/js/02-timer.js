@@ -10,7 +10,6 @@ const secEl = document.querySelector('span[data-seconds]');
 const divEl = document.querySelector('.timer')
 
 btnEl.addEventListener('click', onBtnClick);
-
 btnEl.setAttribute('disabled', true)
 
 let timerId = null;
